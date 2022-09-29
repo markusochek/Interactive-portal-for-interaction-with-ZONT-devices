@@ -48,8 +48,8 @@ class Application {
         $url = 'https://zont-online.ru/api/devices';
         $data = array('load_io' => true);
 
-        $headers = array('X-ZONT-Client' => 'sagalaev.eduard@gmail.com', 'Content-Type' => 'application/json', 'X-ZONT-Token' =>'fw9k6tc3lrihgaedgizxwwxciybsx5yl');
-        $options = array('auth' => array('edson', 'mark0165'));
+        $headers = array('X-ZONT-Client' => '*******', 'Content-Type' => 'application/json', 'X-ZONT-Token' =>'fw9k6tc3lrihgaedgizxwwxciybsx5yl');
+        $options = array('auth' => array('****', '*****'));
         $response = WpOrg\Requests\Requests::post($url, $headers, json_encode($data), $options);
         $result = json_decode($response->body, true);
 
@@ -59,9 +59,9 @@ class Application {
     public function getAuthtoken() {
         $response = WpOrg\Requests\Requests::post(
         'https://zont-online.ru/api/get_authtoken',
-        ['X-ZONT-Client' => 'sagalaev.eduard@gmail.com', 'Content-Type' => 'application/json'],
+        ['X-ZONT-Client' => '********', 'Content-Type' => 'application/json'],
         json_encode(['client_name' => 'My cool app']),
-        ['auth' => ['edson', 'mark0165']]);
+        ['auth' => ['****', ******']]);
 
         return $response->body;
     }
